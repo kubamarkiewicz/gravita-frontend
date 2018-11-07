@@ -1,17 +1,15 @@
 <template>
   <div>
     
-    <page-header></page-header>
+    <page-header 
+      :pageTitle="'Productos'"
+      :breadcrumbs="[
+        {label: 'Productos', active: true}
+      ]"
+      ></page-header>
+
 
     <div class="container">
-
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item active">Productos</li>
-        </ol>
-      </nav>
-
-      <h2 class="mb-3">Productos</h2>
 
       <div>
         <router-link to="/product/add" class="btn btn-primary"><strong>+</strong> Crear</router-link>
@@ -37,6 +35,7 @@
       </table>
 
     </div><!-- /.container -->
+    
 
   </div>
 </template>

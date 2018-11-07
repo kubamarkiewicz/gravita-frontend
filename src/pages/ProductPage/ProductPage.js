@@ -7,7 +7,8 @@ export default {
     return {
       product: {},
       saved: false,
-      isUpdatePage: !!this.$route.params.id
+      isUpdatePage: !!this.$route.params.id,
+      pageTitle: this.$route.params.id ? 'Editar Producto' : 'Crear Producto'
     }
   },
 

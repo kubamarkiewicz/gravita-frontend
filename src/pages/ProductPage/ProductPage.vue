@@ -1,20 +1,16 @@
 <template>
   <div>
     
-    <page-header></page-header>
+    <page-header 
+      :pageTitle="pageTitle"
+      :breadcrumbs="[
+        {label: 'Productos', link: '/'},
+        {label: pageTitle, active: true}
+      ]"
+      ></page-header>
+      
 
     <div class="container">
-
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <router-link to="/">Productos</router-link>
-          </li>
-          <li class="breadcrumb-item active">{{ isUpdatePage ? 'Editar' : 'Crear' }} Producto</li>
-        </ol>
-      </nav>
-
-      <h2 class="mb-3">{{ isUpdatePage ? 'Editar' : 'Crear' }} Producto</h2>
 
       <div class="row">
         <form class="col-6 offset-3" @submit.prevent="onSubmit">
