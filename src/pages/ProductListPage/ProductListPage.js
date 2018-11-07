@@ -1,3 +1,5 @@
+import PageHeader from '../../components/PageHeader.vue';
+
 export default {
   data() {
     return {
@@ -15,5 +17,8 @@ export default {
       .catch( error => {
         console.log( error );
       } );
+  },
+  components: {
+    PageHeader
   }
 }

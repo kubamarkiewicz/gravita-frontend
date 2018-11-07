@@ -1,3 +1,6 @@
+import PageHeader from '../../components/PageHeader.vue';
+import { required } from 'vuelidate/lib/validators';
+
 export default {
 
   data() {
@@ -5,6 +8,17 @@ export default {
       product: {},
       saved: false,
       isUpdatePage: !!this.$route.params.id
+    }
+  },
+
+  validations: {
+    product: {
+      name: {
+        required: required
+      },
+      stock: {
+        required: required
+      }
     }
   },
 
@@ -52,7 +66,14 @@ export default {
     },
 
     onSubmit() {
+      // reset alert
       this.saved = false;
+
+      this.$v.$touch();
+      // if its still pending or an error is returned do not submit
+      if (this.$v.$pending || this.$v.$error) {
+        return;
+      }
 
       // save product data
       if (this.isUpdatePage) {
@@ -64,7 +85,7 @@ export default {
     },
 
     onDeleteClick() {
-      if (confirm('¿Borrar producto?')) {
+      if (confirm('¿Eliminar producto?')) {
         const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products/' + this.$route.params.id;
 
         this.$http.delete( url, this.product )
@@ -75,5 +96,9 @@ export default {
       }
     }
 
+  },
+  
+  components: {
+    PageHeader
   }
 }

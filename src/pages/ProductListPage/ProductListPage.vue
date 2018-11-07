@@ -1,36 +1,42 @@
 <template>
-  <div class="container">
+  <div>
+    
+    <page-header></page-header>
 
-    <nav>
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item active">Productos</li>
-      </ol>
-    </nav>
+    <div class="container">
 
-    <h2 class="mb-3">Productos</h2>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active">Productos</li>
+        </ol>
+      </nav>
 
-    <div>
-      <router-link to="/product/add" class="btn btn-primary"><strong>+</strong> Crear</router-link>
-    </div>  
+      <h2 class="mb-3">Productos</h2>
 
-    <table class="table table-striped table-hover mt-4 mb-4">
-      <thead>
-        <tr>
-          <th scope="col">ID</th>
-          <th scope="col">NOMBRE</th>
-          <th scope="col">STOCK</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="product in products" :key="product.id">
-          <td>{{ product.id }}</td>
-          <td>
-            <router-link :to="'/product/update/' + product.id">{{ product.name }}</router-link>
-          </td>
-          <td>{{ product.stock }}</td>
-        </tr>
-      </tbody>
-    </table>
+      <div>
+        <router-link to="/product/add" class="btn btn-primary"><strong>+</strong> Crear</router-link>
+      </div>  
+
+      <table class="table table-striped table-hover mt-4 mb-4">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">NOMBRE</th>
+            <th scope="col">STOCK</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="product in products" :key="product.id">
+            <td>{{ product.id }}</td>
+            <td>
+              <router-link :to="'/product/update/' + product.id">{{ product.name }}</router-link>
+            </td>
+            <td>{{ product.stock }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div><!-- /.container -->
 
   </div>
 </template>
