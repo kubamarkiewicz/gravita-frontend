@@ -8,7 +8,7 @@ export default {
   },
   created() {
 
-    const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products';
+    const url = 'http://markiewicz.click/test/gravita/backend/api/products';
 
     this.$http.get( url )
       .then( response => {

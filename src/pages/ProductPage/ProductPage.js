@@ -31,7 +31,7 @@ export default {
   methods: {
 
     loadProductData() {
-      const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products/' + this.$route.params.id;
+      const url = 'http://markiewicz.click/test/gravita/backend/api/products/' + this.$route.params.id;
 
       this.$http.get( url )
         .then( response => {
@@ -43,7 +43,7 @@ export default {
     },
 
     createProduct() {
-      const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products';
+      const url = 'http://markiewicz.click/test/gravita/backend/api/products';
 
       this.$http.post( url, this.product )
         .then( response => {
@@ -56,7 +56,7 @@ export default {
     },
 
     updateProduct() {
-      const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products/' + this.$route.params.id;
+      const url = 'http://markiewicz.click/test/gravita/backend/api/products/' + this.$route.params.id;
 
       this.$http.put( url, this.product )
         .then( response => {
@@ -86,7 +86,7 @@ export default {
 
     onDeleteClick() {
       if (confirm('¿Eliminar producto?')) {
-        const url = 'http://localhost:8888/2018/_new%20projects/gravita/prueba_programacion/www/backend/api/products/' + this.$route.params.id;
+        const url = 'http://markiewicz.click/test/gravita/backend/api/products/' + this.$route.params.id;
 
         this.$http.delete( url, this.product )
           .then( response => {
